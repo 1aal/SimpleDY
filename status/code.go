@@ -12,7 +12,7 @@ const (
 	UserNotExistOrPasswordWrongError        // 用户名不存在或密码错误
 	LoadFileError                           // 加载文件出错
 	SaveUploadedFileError                   // 保存文件出错
-
+	NoMoreVideos                            //视频库已经看完
 )
 
 //

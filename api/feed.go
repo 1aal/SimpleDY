@@ -20,6 +20,15 @@ func Feed(c *gin.Context) {
 	}
 	//从数据库查到的视频列表
 	videoList := videoService.FeedbyTime(t)
+	if videoList == nil {
+		c.JSON(http.StatusOK, pojo.FeedResponse{
+			NextTime:   0,
+			StatusCode: status.NoMoreVideos,
+			StatusMsg:  status.Msg(status.NoMoreVideos),
+			VideoList:  nil,
+		})
+	}
+
 	//处理为视频返回信息列表
 	VideoResponseList := make([]pojo.VideoResponse, len(*videoList))
 

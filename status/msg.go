@@ -12,6 +12,7 @@ var msg = []string{
 	"User Not Exist Or Password Wrong", // 用户名不存在或密码错误
 	"Load File Error",                  // 加载文件出错
 	"Save Up loaded File Error",        // 保存文件出错
+	"NoMoreVideos",                     //视频库已经看完
 }
 
 func Msg(code int) string {
